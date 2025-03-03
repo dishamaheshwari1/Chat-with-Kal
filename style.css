@@ -1,0 +1,148 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333; /* Standard dark text color */
+    line-height: 1.6;
+}
+
+/* Chat Interface Styles */
+#chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.message.bot {
+    color: #B0B0B0; /* Stormy gray for Kaladin's text */
+}
+
+.message.user {
+    color: #333;
+    background-color: #E4E9F2;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.message.bot span {
+    font-style: italic;
+}
+
+.message .message-text {
+    font-size: 16px;
+}
+
+/* Answer Choices */
+.choices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.choice {
+    background-color: #004A89; /* Cobalt blue background */
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.choice:hover {
+    background-color: #003366; /* Slightly darker cobalt blue for hover */
+}
+
+.choice:active {
+    background-color: #002244; /* Darker cobalt blue for active */
+}
+
+/* Button for actions */
+button {
+    background-color: #004A89; /* Cobalt blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #003366; /* Darker cobalt blue */
+}
+
+button:active {
+    background-color: #002244; /* Even darker cobalt blue for active */
+}
+
+/* Progress Bar or indicator */
+#progress {
+    width: 100%;
+    background-color: #ccc;
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#progress .progress-bar {
+    width: 0%; /* Will be dynamically updated */
+    background-color: #004A89; /* Cobalt blue */
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Profile Box Styling */
+#profile-box {
+    background-color: #F4F4F4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.profile-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #004A89; /* Cobalt blue */
+}
+
+.profile-details {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+    color: #B0B0B0; /* Stormy gray */
+}
+
+footer a {
+    color: #004A89; /* Cobalt blue */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
