@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Complete redesign to match phone mockup interface */
 * {
     margin: 0;
     padding: 0;
@@ -6,143 +6,177 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: #333; /* Standard dark text color */
-    line-height: 1.6;
-}
-
-/* Chat Interface Styles */
-#chat-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
+    font-family: 'Courier New', monospace;
+    /* Changed background to super dark blue */
+    background-color: #1E3A5F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 20px;
+}
+
+.phone-container {
+    width: 100%;
+    max-width: 450px;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.message {
-    margin-bottom: 10px;
-}
-
-.message.bot {
-    color: #B0B0B0; /* Stormy gray for Kaladin's text */
-}
-
-.message.user {
-    color: #333;
-    background-color: #E4E9F2;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.message.bot span {
-    font-style: italic;
-}
-
-.message .message-text {
-    font-size: 16px;
-}
-
-/* Answer Choices */
-.choices {
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    height: 90vh;
+    max-height: 800px;
+}
+
+.phone-header {
+    /* Changed header to lighter blue */
+    background-color: #4682B4;
+    padding: 20px;
+    text-align: center;
+    border-radius: 30px 30px 0 0;
+}
+
+.contact-name {
+    font-size: 24px;
+    font-weight: bold;
+    /* Updated text color to white for better contrast */
+    color: white;
+}
+
+.notification-bar {
+    /* Updated to slate gray color scheme */
+    background-color: #708090;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
 }
 
-.choice {
-    background-color: #004A89; /* Cobalt blue background */
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-
-.choice:hover {
-    background-color: #003366; /* Slightly darker cobalt blue for hover */
-}
-
-.choice:active {
-    background-color: #002244; /* Darker cobalt blue for active */
-}
-
-/* Button for actions */
-button {
-    background-color: #004A89; /* Cobalt blue */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    display: block;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #003366; /* Darker cobalt blue */
-}
-
-button:active {
-    background-color: #002244; /* Even darker cobalt blue for active */
-}
-
-/* Progress Bar or indicator */
-#progress {
-    width: 100%;
-    background-color: #ccc;
-    height: 10px;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-#progress .progress-bar {
-    width: 0%; /* Will be dynamically updated */
-    background-color: #004A89; /* Cobalt blue */
-    height: 100%;
-    border-radius: 5px;
-}
-
-/* Profile Box Styling */
-#profile-box {
-    background-color: #F4F4F4;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-.profile-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #004A89; /* Cobalt blue */
-}
-
-.profile-details {
-    margin-top: 10px;
-    font-size: 16px;
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
+.notification-text {
     font-size: 14px;
-    margin-top: 30px;
-    color: #B0B0B0; /* Stormy gray */
+    /* Updated text color to white */
+    color: white;
+    flex: 1;
 }
 
-footer a {
-    color: #004A89; /* Cobalt blue */
-    text-decoration: none;
+.open-button {
+    /* Updated to darker blue color scheme */
+    background-color: #1E3A5F;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.open-button:hover {
+    /* Darker hover state */
+    background-color: #142842;
+}
+
+.chat-window {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.message.left {
+    /* Updated to slate gray color scheme */
+    background-color: #708090;
+    color: white;
+    align-self: flex-start;
+}
+
+.message.right {
+    /* Changed user message bubbles to lighter blue */
+    background-color: #4682B4;
+    color: white;
+    align-self: flex-end;
+}
+
+/* Added typing indicator styles */
+.typing-indicator {
+    max-width: 80%;
+    padding: 15px 20px;
+    border-radius: 20px;
+    background-color: #708090;
+    color: white;
+    align-self: flex-start;
+    font-size: 16px;
+}
+
+.choices-container {
+    padding: 15px 20px 25px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Ensure choices stay at bottom */
+    border-top: 1px solid #e0e0e0;
+}
+
+.choice-button {
+    /* Changed choice buttons to lighter blue */
+    background-color: #4682B4;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.choice-button:hover {
+    /* Updated hover state for lighter blue */
+    background-color: #356a99;
+}
+
+.choice-button:active {
+    /* Updated active state for lighter blue */
+    background-color: #2a5680;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Scrollbar styling */
+.chat-window::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+    /* Updated scrollbar to slate gray */
+    background: #708090;
+    border-radius: 3px;
+}
+
+.chat-window::-webkit-scrollbar-thumb:hover {
+    /* Darker hover state for scrollbar */
+    background: #556270;
 }
