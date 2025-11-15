@@ -4,34 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Radiant Orders Personality Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Chat with Kaladin</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Therapy Session with Kaladin Stormblessed</h1>
-        </header>
+    <!-- Complete restructure to match phone UI with chat interface -->
+    <div class="phone-container">
+        <div class="phone-header">
+            <!-- Updated contact name to "Kaladin" -->
+            <div class="contact-name">Kaladin</div>
+        </div>
 
-        <section id="conversation">
-            <div id="dialogue-container">
-                <!-- Dialogue will appear here -->
-            </div>
+        <div class="notification-bar">
+            <!-- Updated notification text to "Kaladin" -->
+            <div class="notification-text">New notification from Kaladin*</div>
+            <button class="open-button" id="open-button">*Open*</button>
+        </div>
 
-            <div id="choices-container">
-                <!-- Answer choices will appear here -->
-            </div>
-        </section>
+        <div class="chat-window" id="chat-window">
+            <!-- Messages will be added here -->
+        </div>
 
-        <section id="results" class="hidden">
-            <h2>Your Radiant Order</h2>
-            <div id="order-result"></div>
-            <button id="retry-button">Take Quiz Again</button>
-        </section>
-
-        <footer>
-            <button id="share-button">Share Results</button>
-        </footer>
+        <div class="choices-container" id="choices-container">
+            <!-- Choice buttons will be added here -->
+        </div>
     </div>
 
     <script src="script.js"></script>
